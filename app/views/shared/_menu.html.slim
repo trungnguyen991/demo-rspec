@@ -1,0 +1,16 @@
+aside.main-sidebar
+  section.sidebar
+    .user-panel
+      .pull-left.image
+        = image_tag 'user2-160x160.jpg', class:'img-circle'
+      .pull-left.info
+        p
+          = current_user.name
+        a href="#"
+          i.fa.fa-circle.text-success
+          | Online
+    ul.sidebar-menu
+      li.active
+        a href="#{employees_path}"
+          i.fa.fa-th
+          span Employees

@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    title Demo
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  - if !user_signed_in?
+    body.hold-transition.login-page
+      = yield
+  - else
+    body.hold-transition.skin-blue.sidebar-mini
+      .wrapper
+        = render 'shared/header'
+        = render 'shared/menu'
+        .content-wrapper
+          = yield

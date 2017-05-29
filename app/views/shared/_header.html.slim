@@ -1,0 +1,40 @@
+header.main-header
+  /! Logo
+  a.logo href=""
+    /! mini logo for sidebar mini 50x50 pixels
+    span.logo-mini
+      b> A
+      | LT
+    /! logo for regular state and mobile devices
+    span.logo-lg
+      b> Admin
+      | LTE
+  /! Header Navbar: style can be found in header.less
+  nav.navbar.navbar-static-top
+    /! Sidebar toggle button
+    /a.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
+    /  span.sr-only Toggle navigation
+    /  span.icon-bar
+    /  span.icon-bar
+    /  span.icon-bar
+    .navbar-custom-menu
+      ul.nav.navbar-nav
+        /! User Account: style can be found in dropdown.less
+        li.dropdown.user.user-menu
+          a.dropdown-toggle data-toggle="dropdown" href="#"
+            = image_tag 'user2-160x160.jpg', class:'user-image'
+            span.hidden-xs
+              = current_user.name
+          ul.dropdown-menu
+            /! User image
+            li.user-header
+              = image_tag 'user2-160x160.jpg', class:'img-circle'
+              p
+                = current_user.name
+            /! /.row
+            /! Menu Footer
+            li.user-footer
+              .pull-left
+                a.btn.btn-default.btn-flat href="#"  Profile
+              .pull-right
+                = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-default btn-flat'

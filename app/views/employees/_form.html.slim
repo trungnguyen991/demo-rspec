@@ -1,0 +1,52 @@
+= form_for employee, html: {class: 'form-horizontal', 'data-parsley-validate'=> true} do |f|
+  .box-body
+    .form-group
+      .row
+        .col-xs-offset-2.col-xs-2
+          label.pull-right  Code
+        .col-xs-6
+          = f.text_field :code, class: 'form-control', required: true, 'data-parsley-required-message'=> "Code can't be blank"
+    .form-group
+      .row
+        .col-xs-offset-2.col-xs-2
+          label.pull-right  Full Name
+        .col-xs-6
+          = f.text_field :name, class: 'form-control', required: true
+    .form-group
+      .row
+        .col-xs-offset-2.col-xs-2
+          label.pull-right  Email
+        .col-xs-6
+          = f.text_field :email, class: 'form-control', required: true
+    .form-group
+      .row
+        .col-xs-offset-2.col-xs-2
+          label.pull-right  Gender
+        .col-xs-6
+          = f.select :gender, [['Male', 1], ['Female', 0]]
+    .form-group
+      .row
+        .col-xs-offset-2.col-xs-2
+          label.pull-right DOB:
+        .col-xs-6
+          .input-group.date
+            .input-group-addon
+              i.fa.fa-calendar
+            = f.text_field :dob, class: 'form-control pull-right', id: 'datepicker'
+    .form-group
+      .row
+        .col-xs-offset-2.col-xs-2
+          label.pull-right  Phone
+        .col-xs-6
+          = f.text_field :phone_number, class: 'form-control', required: true
+    .form-group
+      .row
+        .col-xs-offset-2.col-xs-2
+          label.pull-right  Address
+        .col-xs-6
+          = f.text_field :address, class: 'form-control', required: true
+    .form-group
+      .row
+        .col-xs-offset-4.col-xs-6
+          = link_to 'Back', employees_path, class: 'btn btn-default', style: 'margin-right: 5px;'
+          button.btn.btn-primary type="submit"  Submit

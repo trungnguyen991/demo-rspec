@@ -1,0 +1,28 @@
+section.content-header
+  h1
+    | Employee
+  ol.breadcrumb
+    li
+      a href="#"
+        i.fa.fa-dashboard
+        | Home
+    li
+      a href="#"  Employees
+    li.active
+      = @employee.name
+section.content
+  .row
+    .col-xs-12
+      .box.box-primary
+        .box-header.with-border
+          h3.box-title Update Employee
+        /! /.box-header
+        /! form start
+        = render 'form', employee: @employee
+javascript:
+    $(function () {
+        $('#datepicker').datepicker({
+            autoclose:true,
+            format: 'yyyy-mm-dd'
+        });
+    });

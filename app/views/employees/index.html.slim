@@ -1,0 +1,49 @@
+section.content-header
+  h1
+    | Employees
+  ol.breadcrumb
+    li
+      a href="#"
+        i.fa.fa-dashboard
+        | Home
+    li
+      a href="#"  Employees
+    li.active List
+section.content
+  .row
+    .col-xs-12
+      .box
+        .box-header
+          = link_to 'Create', new_employee_path, class: 'btn btn-success'
+        /! /.box-header
+        .box-body.table-responsive.no-padding
+          table.table.table-hover
+            tr
+              th Code
+              th Full Name
+              th Email
+              th Gender
+              th DOB
+              th Phone Number
+              th Address
+              th style=("width: 15%;") Action
+            - @employees.each do |e|
+              tr
+                td
+                  = e.code
+                td
+                  = e.name
+                td
+                  = e.email
+                td
+                  = e.gender
+                td
+                  = e.dob
+                td
+                  = e.phone_number
+                td
+                  = e.address
+                td style=("width: 15%;")
+                  = link_to 'Edit', edit_employee_path(e), class: 'btn btn-warning'
+
+                  = link_to 'Delete', employee_path(e), method: :delete, class: 'btn btn-danger', style: 'margin-left: 5px;'
